@@ -1,6 +1,6 @@
 import {useState} from "react";
 // import React, { useState } from 'react';
-import { AimOutlined, FileProtectOutlined, BarChartOutlined,LoginOutlined } from '@ant-design/icons';
+import { AimOutlined, FileProtectOutlined,  } from '@ant-design/icons';
 import { Menu } from 'antd';
 import {NavLink} from "react-router";
 const items = [
@@ -13,7 +13,7 @@ const items = [
     },
     {
         key: 'sub2',
-        label: <NavLink to={"/user-info"}>User info</NavLink>,
+        label: <NavLink to={"/user-info"}>Client info</NavLink>,
         icon: <i className={"fa-solid fa-user"} />,
 
     },

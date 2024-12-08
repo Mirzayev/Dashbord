@@ -15,7 +15,7 @@ function App() {
                 element: <Admin/>,
                 children: [
                     {
-                        path: '/',
+                       index: true,
                         element: <Map/>
                     },
                     {
