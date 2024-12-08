@@ -2,29 +2,26 @@ import {useState} from "react";
 // import React, { useState } from 'react';
 import { AimOutlined, FileProtectOutlined, BarChartOutlined,LoginOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
+import {NavLink} from "react-router";
 const items = [
     {
         key: 'sub1',
-        label: 'Map',
+        label: <NavLink to={"/"}>Map</NavLink>,
         icon: <AimOutlined />,
+
 
     },
     {
         key: 'sub2',
-        label: 'User info',
+        label: <NavLink to={"/user-info"}>User info</NavLink>,
         icon: <i className={"fa-solid fa-user"} />,
 
     },
 
-    {
-        key: 'sub3',
-        label: 'Result',
-        icon: <BarChartOutlined />,
 
-    },
     {
         key: 'sub4',
-        label: 'Product list',
+        label: <NavLink to={"/product-list"}>Product list</NavLink>,
         icon: <FileProtectOutlined />,
 
     },

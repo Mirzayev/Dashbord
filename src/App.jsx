@@ -1,13 +1,39 @@
 import './App.css'
 import Layout from "./Layout.jsx";
 import Admin from "./pages/admin-page/pages/Admin.jsx";
+import {createBrowserRouter, RouterProvider} from "react-router";
+import Map from "./pages/admin-page/components/Map.jsx";
+import UserInfo from "./pages/admin-page/components/UserInfo.jsx";
+import ProductList from "./pages/admin-page/components/ProductList.jsx";
 
 function App() {
 
+    const route = createBrowserRouter(
+        [
+            {
+                path: '/',
+                element: <Admin/>,
+                children: [
+                    {
+                        path: '/',
+                        element: <Map/>
+                    },
+                    {
+                        path: '/user-info',
+                        element: <UserInfo/>
+                    },
+                    {
+                        path: '/product-list',
+                        element: <ProductList/>
+                    },
+                ]
+            }
+        ]
+    )
+
     return (
-        <div className="App">
-            <Admin/>
-        </div>
+        <RouterProvider router={route}>
+        </RouterProvider>
     )
 }
 
