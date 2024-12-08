@@ -1,9 +1,8 @@
-import { NavLink } from "react-router-dom"; // Routerga to'g'ri yo'naltirish
+import {Link, NavLink, Outlet, useNavigate} from "react-router-dom";
 import { useState } from "react";
 
 export default function UserInfo() {
-    const [selectedClient, setSelectedClient] = useState(null); // Tanlangan foydalanuvchi
-
+    const navigate = useNavigate(); // Redirect qilish uchun
     const clients = [
         {
             id: 1,
@@ -23,9 +22,8 @@ export default function UserInfo() {
         },
     ];
 
-    const handleSelectClient = (id) => {
-        const client = clients.find((client) => client.id === id);
-        setSelectedClient(client); // Tanlangan foydalanuvchini holatga yozamiz
+    const handleViewDetails = (id) => {
+        navigate(`/user-info/${id}`); // Redirect to client details
     };
 
     return (
@@ -34,9 +32,10 @@ export default function UserInfo() {
                 Client List
             </h3>
 
+            {/* Clientlar ro'yxati */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {clients.map((client) => (
-                    <div
+                    <Link to={`/user-info/${client.id}`}
                         key={client.id}
                         className="bg-white shadow-lg rounded-lg p-5 hover:shadow-xl transform transition duration-300 hover:scale-105"
                     >
@@ -52,25 +51,16 @@ export default function UserInfo() {
                         <p className="text-center text-gray-500">
                             Phone: {client.phoneNumber}
                         </p>
-                        <NavLink
-                            to="#"
-                            onClick={() => handleSelectClient(client.id)}
+                        <button
+                            onClick={() => handleViewDetails(client.id)}
                             className="block text-center text-blue-500 mt-4 underline"
                         >
                             View Details
-                        </NavLink>
-                    </div>
+                        </button>
+                    </Link>
                 ))}
             </div>
 
-            {selectedClient && (
-                <div className="mt-8 bg-gray-100 p-5 rounded-lg shadow-md">
-                    <h3 className="text-xl font-semibold">Selected Client Details</h3>
-                    <p><strong>Name:</strong> {selectedClient.name} {selectedClient.surname}</p>
-                    <p><strong>Age:</strong> {selectedClient.age}</p>
-                    <p><strong>Phone:</strong> {selectedClient.phoneNumber}</p>
-                </div>
-            )}
         </div>
     );
 }

@@ -32,7 +32,7 @@ const Dashbord = ({ mobile }) => {
         <div>
             {/* Mobil versiyasi uchun pastki menyu */}
             {mobile ? (
-                <div className="flex justify-around py-2">
+                <div className="flex justify-around py-2 my-2">
                     {items.map((item) => (
                         <NavLink
                             key={item.key}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "antd";
+
 import "tailwindcss/tailwind.css";
 
 const products = [
@@ -43,7 +43,7 @@ const products = [
 export default  function ProductList(){
     return (
         <div className="bg-gray-100 py-10 px-5">
-            <h1 className="text-3xl font-bold text-center mb-10 text-gray-800">Product List</h1>
+            <h1 className="text-3xl font-bold text-center mb-10 text-gray-800">Purchase product </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {products.map((product) => (
                     <div

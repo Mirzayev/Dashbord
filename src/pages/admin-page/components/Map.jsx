@@ -22,7 +22,6 @@ const FullScreenYandexMap = () => {
         });
 
         return () => {
-            // Xarita destruktsiya qilish, tozalash
             if (mapContainerRef.current) {
                 mapContainerRef.current.innerHTML = '';
             }

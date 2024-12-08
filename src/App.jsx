@@ -20,11 +20,15 @@ function App() {
                     },
                     {
                         path: '/user-info',
-                        element: <UserInfo/>
+                        element: <UserInfo/>,
                     },
                     {
                         path: '/product-list',
                         element: <ProductList/>
+                    },
+                    {
+                        path: '/user-info/:id',
+                        element: <ProductList/> // user info detail pageni yozasan shu yergas
                     },
                 ]
             }
