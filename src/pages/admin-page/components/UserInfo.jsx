@@ -28,16 +28,15 @@ export default function UserInfo() {
 
     return (
         <div className="user-info my-10 mx-5">
-            <h3 className="flex items-center justify-center my-4 text-xl font-semibold">
+            <h3 className="flex items-center  my-5 px-2 text-xl font-semibold ">
                 Client List
             </h3>
 
-            {/* Clientlar ro'yxati */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {clients.map((client) => (
                     <Link to={`/user-info/${client.id}`}
                         key={client.id}
-                        className="bg-white shadow-lg rounded-lg p-5 hover:shadow-xl transform transition duration-300 hover:scale-105"
+                        className="bg-white shadow-lg rounded-lg p-5 hover:shadow-xl transform transition duration-300 hover:scale-103"
                     >
                         <img
                             src={client.img}
@@ -51,12 +50,14 @@ export default function UserInfo() {
                         <p className="text-center text-gray-500">
                             Phone: {client.phoneNumber}
                         </p>
-                        <button
-                            onClick={() => handleViewDetails(client.id)}
-                            className="block text-center text-blue-500 mt-4 underline"
-                        >
-                            View Details
-                        </button>
+                        <div className="flex justify-center">
+                            <button
+                                onClick={() => handleViewDetails(client.id)}
+                                className=" text-center text-blue-500 mt-4 underline block"
+                            >
+                                View Details
+                            </button>
+                        </div>
                     </Link>
                 ))}
             </div>

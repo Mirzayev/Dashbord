@@ -4,7 +4,7 @@ import Admin from "./pages/admin-page/pages/Admin.jsx";
 import {createBrowserRouter, RouterProvider} from "react-router";
 import Map from "./pages/admin-page/components/Map.jsx";
 import UserInfo from "./pages/admin-page/components/UserInfo.jsx";
-import ProductList from "./pages/admin-page/components/ProductList.jsx";
+import Purchaseroduct from "./pages/admin-page/components/Purchaseroduct.jsx";
 
 function App() {
 
@@ -24,11 +24,11 @@ function App() {
                     },
                     {
                         path: '/product-list',
-                        element: <ProductList/>
+                        element: <Purchaseroduct/>
                     },
                     {
                         path: '/user-info/:id',
-                        element: <ProductList/> // user info detail pageni yozasan shu yergas
+                        element: <Purchaseroduct/> // user info detail pageni yozasan shu yergas
                     },
                 ]
             }
